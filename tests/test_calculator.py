@@ -14,11 +14,3 @@ from src.calculator import add
 def test_add_cases(a, b, expected):
     assert add(a, b) == expected
 
-# pytest -v output:
-# PASSED  test_add_cases[2-3-5]
-# PASSED  test_add_cases[0-0-0]
-# PASSED  test_add_cases[-1-1-0]
-# PASSED  test_add_cases[100--50-50]
-
-# Re-run one failing case by ID:
-pytest -k "2-3-5"
