@@ -1,4 +1,5 @@
 import pytest
+import requests
 from src.calculator import add
 
 # Replaces writing 4 identical test functions
@@ -10,3 +11,11 @@ from src.calculator import add
 ])
 def test_add_cases(a, b, expected):
     assert add(a, b) == expected
+
+# pytest -k "2-3-5"
+@pytest.mark.skip(reason="WIP")
+@pytest.mark.external
+@pytest.mark.slow
+def test_weather_api():
+    resp = requests.get(WEATHER_URL)
+    assert resp.status_code == 200
